@@ -1,24 +1,26 @@
-import * as orm from '@midwayjs/typeorm';
-import {
-  Configuration,
-  App,
-  IMidwayApplication,
-  Inject,
+import type {
   ILogger,
+  IMidwayApplication,
   MidwayWebRouterService,
-} from '@midwayjs/core';
-import * as koa from '@midwayjs/koa';
+} from '@midwayjs/core'
+import * as cool from '@cool-midway/core'
+import * as task from '@cool-midway/task'
+import {
+  App,
+  Configuration,
+  Inject,
+} from '@midwayjs/core'
+import * as cron from '@midwayjs/cron'
+import * as info from '@midwayjs/info'
+import * as koa from '@midwayjs/koa'
+import * as staticFile from '@midwayjs/static-file'
+import * as orm from '@midwayjs/typeorm'
+import * as upload from '@midwayjs/upload'
 // import * as crossDomain from '@midwayjs/cross-domain';
-import * as validate from '@midwayjs/validate';
-import * as info from '@midwayjs/info';
-import * as staticFile from '@midwayjs/static-file';
-import * as cron from '@midwayjs/cron';
-import * as DefaultConfig from './config/config.default';
-import * as LocalConfig from './config/config.local';
-import * as ProdConfig from './config/config.prod';
-import * as cool from '@cool-midway/core';
-import * as upload from '@midwayjs/upload';
-// import * as task from '@cool-midway/task';
+import * as validate from '@midwayjs/validate'
+import * as DefaultConfig from './config/config.default'
+import * as LocalConfig from './config/config.local'
+import * as ProdConfig from './config/config.prod'
 // import * as rpc from '@cool-midway/rpc';
 
 @Configuration({
@@ -42,7 +44,7 @@ import * as upload from '@midwayjs/upload';
     // rpc 微服务 远程调用
     // rpc,
     // 任务与队列
-    // task,
+    task,
     {
       component: info,
       enabledEnvironment: ['local', 'prod'],
@@ -58,13 +60,13 @@ import * as upload from '@midwayjs/upload';
 })
 export class MainConfiguration {
   @App()
-  app: IMidwayApplication;
+  app: IMidwayApplication
 
   @Inject()
-  webRouterService: MidwayWebRouterService;
+  webRouterService: MidwayWebRouterService
 
   @Inject()
-  logger: ILogger;
+  logger: ILogger
 
   async onReady() {}
 }

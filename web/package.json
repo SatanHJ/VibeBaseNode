@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@vueuse/core": "catalog:frontend",
+    "axios": "catalog:",
     "vue": "catalog:frontend",
     "vue-router": "catalog:frontend"
   },

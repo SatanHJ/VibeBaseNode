@@ -1,7 +1,7 @@
-import { CoolConfig } from '@cool-midway/core';
-import { MidwayConfig } from '@midwayjs/core';
-import { entities } from '../entities';
-import { TenantSubscriber } from '../modules/base/db/tenant';
+import type { CoolConfig } from '@cool-midway/core'
+import type { MidwayConfig } from '@midwayjs/core'
+import { entities } from '../entities'
+import { TenantSubscriber } from '../modules/base/db/tenant'
 
 /**
  * 本地开发 npm run prod 读取的配置文件
@@ -41,4 +41,4 @@ export default {
     // 是否自动导入模块菜单
     initMenu: false,
   } as CoolConfig,
-} as MidwayConfig;
+} as MidwayConfig

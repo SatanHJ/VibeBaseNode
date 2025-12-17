@@ -1,16 +1,16 @@
-import { CoolConfig } from '@cool-midway/core';
-import { MidwayConfig } from '@midwayjs/core';
-import { CoolCacheStore } from '@cool-midway/core';
-import * as path from 'path';
-import { pCachePath, pUploadPath } from '../comm/path';
-import { availablePort } from '../comm/port';
+import type { CoolConfig } from '@cool-midway/core'
+import type { MidwayConfig } from '@midwayjs/core'
+import * as path from 'node:path'
+import { CoolCacheStore } from '@cool-midway/core'
+import { pCachePath, pUploadPath } from '../comm/path'
+import { availablePort } from '../comm/port'
 
 // redis缓存
 // import { redisStore } from 'cache-manager-ioredis-yet';
 
 export default {
   // 确保每个项目唯一，项目首次启动会自动生成
-  keys: 'cool-admin-keys-xxxxxx',
+  keys: 'a985f8fb-429a-4d44-976f-62c835637c31',
   koa: {
     port: availablePort(8001),
   },
@@ -88,4 +88,4 @@ export default {
       softDelete: true,
     },
   } as CoolConfig,
-} as MidwayConfig;
+} as MidwayConfig

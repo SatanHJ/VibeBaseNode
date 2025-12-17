@@ -1,6 +1,6 @@
-import { CoolConfig } from '@cool-midway/core';
-import { MidwayConfig } from '@midwayjs/core';
-import { TenantSubscriber } from '../modules/base/db/tenant';
+import type { CoolConfig } from '@cool-midway/core'
+import type { MidwayConfig } from '@midwayjs/core'
+import { TenantSubscriber } from '../modules/base/db/tenant'
 
 /**
  * 本地开发 npm run dev 读取的配置文件
@@ -9,12 +9,12 @@ export default {
   typeorm: {
     dataSource: {
       default: {
-        type: 'mysql',
-        host: '127.0.0.1',
-        port: 3306,
-        username: 'root',
-        password: '123456',
-        database: 'cool',
+        type: 'postgres',
+        host: '183.56.252.24',
+        port: 5432,
+        username: 'person_test',
+        password: 'aBHRJnmJKMkZ6yZe',
+        database: 'person_test',
         // 自动建表 注意：线上部署的时候不要使用，有可能导致数据丢失
         synchronize: true,
         // 打印日志
@@ -40,4 +40,4 @@ export default {
     // 是否自动导入模块菜单
     initMenu: true,
   } as CoolConfig,
-} as MidwayConfig;
+} as MidwayConfig
