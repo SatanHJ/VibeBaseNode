@@ -1,0 +1,37 @@
+{
+  "name": "vibe-base-node",
+  "private": true,
+  "packageManager": "pnpm@10.12.1",
+  "engines": {
+    "node": ">=20"
+  },
+  "volta": {
+    "node": "20.19.6",
+    "pnpm": "10.12.1"
+  },
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "dev:api": "pnpm --filter ./api dev",
+    "dev:web": "pnpm --filter ./web dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "lint:fix": "pnpm -r lint:fix",
+    "test": "pnpm -r test"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,vue,cjs,mjs,cts,mts}": "eslint --fix"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:dev",
+    "@unocss/eslint-plugin": "catalog:dev",
+    "eslint": "catalog:dev",
+    "eslint-plugin-format": "catalog:dev",
+    "typescript": "catalog:dev"
+  },
+  "pnpm": {
+    "overrides": {
+      "unplugin": "catalog:build",
+      "vite": "catalog:build"
+    }
+  }
+}
